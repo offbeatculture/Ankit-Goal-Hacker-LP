@@ -27,7 +27,35 @@
 />
 
 
-    <script type="module" crossorigin src="/assets/index-Cvt7GqEY.js"></script>
+<!-- githu SPA -->
+<script>
+      (function () {
+        var l = window.location;
+        if (!l.search) return;
+
+        var params = new URLSearchParams(l.search);
+        var p = params.get("p");
+        if (!p) return;
+
+        var path = decodeURIComponent(p);
+
+        var h = params.get("h");
+        if (h) {
+          params.delete("h");
+        }
+
+        params.delete("p");
+
+        var qs = params.toString();
+        var hash = h ? decodeURIComponent(h) : l.hash || "";
+
+        var newUrl = path + (qs ? "?" + qs : "") + hash;
+
+        window.history.replaceState(null, "", newUrl);
+      })();
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-Dn9xcwPC.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-412qHHQs.css">
   </head>
 
