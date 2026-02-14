@@ -1,21 +1,17 @@
 const testimonials = [
   {
-    name: "Swastik Nandakumar",
     image: "/testimonials/asus.jpg",
     url: "https://your-testimonial-link.com/1",
   },
   {
-    name: "Shankar Kulkarni",
     image: "/testimonials/dupont.jpg",
     url: "https://your-testimonial-link.com/2",
   },
   {
-    name: "May Pierce",
     image: "/testimonials/nuxe.jpg",
     url: "https://your-testimonial-link.com/3",
   },
   {
-    name: "Nevil",
     image: "/testimonials/indira.jpg",
     url: "https://your-testimonial-link.com/4",
   },
@@ -31,7 +27,6 @@ const TrustStrip = () => {
       <div className="flex items-center gap-4 overflow-x-auto no-scrollbar">
         {testimonials.map((item) => (
           <button
-            key={item.name}
             type="button"
             className="group flex flex-col items-center gap-1"
           >
@@ -40,7 +35,6 @@ const TrustStrip = () => {
               <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-full border-2 border-yellow-400 p-[2px] transition-transform duration-300 group-hover:scale-105">
                 <img
                   src={item.image}
-                  alt={item.name}
                   loading="lazy"
                   className="h-full w-full rounded-full object-cover"
                 />
@@ -59,10 +53,6 @@ const TrustStrip = () => {
                 </div>
               </div>
             </div>
-
-            <span className="text-[11px] text-gray-400">
-              {item.name}
-            </span>
           </button>
         ))}
       </div>

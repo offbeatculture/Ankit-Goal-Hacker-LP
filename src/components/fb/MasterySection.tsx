@@ -126,7 +126,29 @@ export const MasterySection = () => {
               </div>
             );
           })}
+            <div className="flex items-center justify-center">
+              <a
+                href="#form"
+                className="
+                  inline-flex items-center justify-center
+                  rounded-xl bg-yellow-400 text-black font-bold 
+                  px-10 py-4 text-lg
+                  sm:px-7 sm:py-3 sm:text-sm
+                  transition-all duration-300
+                  hover:bg-yellow-300
+                  focus:outline-none
+                  focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black
+
+                  shadow-[0_0_25px_rgba(250,204,21,0.35)]
+                  hover:shadow-[0_0_35px_rgba(250,204,21,0.45)]
+                  
+                "
+              >
+                Become A Goal-Hacker
+              </a>
+            </div>
         </div>
+        
 
         {/* subtle separator */}
         <div className="mt-14 flex justify-center">

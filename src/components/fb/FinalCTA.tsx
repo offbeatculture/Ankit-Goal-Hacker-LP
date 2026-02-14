@@ -36,7 +36,7 @@ const FinalCTA = () => {
                   "linear-gradient(90deg, rgba(168,85,247,1) 0%, rgba(250,204,21,1) 100%)",
               }}
             >
-              JOIN FOR JUST ₹99 →
+              Become A Goal-Hacker For Just ₹99 →
               {/* subtle glow ring */}
               <span
                 className="pointer-events-none absolute -inset-[2px] rounded-full opacity-40 blur-[10px]"

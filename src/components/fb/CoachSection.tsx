@@ -159,7 +159,7 @@ const CoachSection = () => {
               >
                 {/* pulse ring */}
                 <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-yellow-400/50 animate-cta-pulse" />
-                Learn from Ankit <ArrowUpRight className="h-4 w-4" />
+                Become Goal-Hacker <ArrowUpRight className="h-4 w-4" />
               </a>
 
               <span className="text-sm text-white/60">
