@@ -9,11 +9,13 @@ import FAQSection from "@/components/fb/Faq";
 import { ProblemSection } from "@/components/fb/ProblemSection";
 import { GoalsPulledSection } from "@/components/fb/GoalsPulledSection";
 import { MasterySection } from "@/components/fb/MasterySection";
+import AnnouncementBar from "@/components/fb/AnnouncementBar";
 
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-background">
+      <AnnouncementBar/>
       <HeroSection />
       <SocialProof />
       <ProblemSection/>
