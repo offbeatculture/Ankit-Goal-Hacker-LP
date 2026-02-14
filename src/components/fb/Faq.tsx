@@ -73,9 +73,7 @@ const FAQSection = () => {
         </div>
 
         {/* Closing trust line */}
-        <p className="mt-10 text-sm text-white/50">
-          Still unsure? If execution matters to you — this was built for you.
-        </p>
+     
       </div>
     </section>
   );

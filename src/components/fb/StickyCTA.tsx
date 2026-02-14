@@ -35,7 +35,7 @@ const StickyCTA = () => {
             <span className="text-black/70">₹99</span>
           </p>
           <p className="text-xs md:text-sm text-black/60">
-            Build goals that execute themselves.
+            Hack Your Habits, Automate Your Goals
           </p>
         </div>
 
@@ -61,7 +61,7 @@ const StickyCTA = () => {
               shadow-[0_0_22px_rgba(0,0,0,0.25)]
             "
           >
-            Reserve Your Seat Now
+            Become A Goal-Hacker
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>

@@ -3,26 +3,44 @@ import { Flame } from "lucide-react";
 const AnnouncementBar = () => {
   return (
     <div className="w-full bg-[#facc15] text-black">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-center gap-3 text-sm md:text-base font-semibold">
-
+      <div
+        className="
+        max-w-7xl mx-auto
+        px-4 py-3
+        flex flex-wrap items-center justify-center
+        gap-2
+        text-xs sm:text-sm md:text-base
+        font-bold text-center
+      "
+      >
         {/* Animated Icon */}
-        <Flame className="w-5 h-5 animate-blink" />
+        <Flame className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 animate-blink" />
 
-        <span>
+        <span className="leading-snug">
           Limited Time Offer — Workshop Access at Launch Price
         </span>
 
-        <span className="bg-black/15 text-black px-4 py-1 rounded-full text-xs md:text-sm font-bold">
-          Only ₹99
+        {/* Price Section */}
+        <span
+          className="
+          bg-black/10
+          px-3 py-1
+          rounded-full
+          flex items-center gap-2
+          text-xs sm:text-sm
+          font-bold
+        "
+        >
+          <span className="line-through opacity-60">₹999</span>
+          <span className="text-black font-extrabold">₹99</span>
         </span>
-
       </div>
 
       {/* Animation */}
       <style>{`
         @keyframes blinkPulse {
           0% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.4; transform: scale(1.15); }
+          50% { opacity: 0.5; transform: scale(1.1); }
           100% { opacity: 1; transform: scale(1); }
         }
         .animate-blink {

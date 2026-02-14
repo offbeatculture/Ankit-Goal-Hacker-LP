@@ -30,7 +30,7 @@ const RegistrationForm = () => {
       {/* Header */}
       <div className="text-center space-y-2">
         <h3 className="text-xl font-bold text-gray-900">
-          Get Instant Access
+          Join The Workshop
         </h3>
 
         {/* Timer */}
@@ -129,30 +129,7 @@ const RegistrationForm = () => {
         </div>
 
         {/* Objective */}
-        <div>
-          <label className="mb-1 block text-sm font-medium text-gray-700">
-            Why are you joining?
-          </label>
-          <div className="relative group">
-            <Target className="absolute left-3 top-3 h-4 w-4 text-gray-400 group-focus-within:text-yellow-500" />
-            <select
-              className="
-                w-full appearance-none rounded-xl border border-gray-300
-                bg-white py-3 pl-10 pr-10 text-sm
-                transition
-                focus:border-yellow-400 focus:outline-none focus:ring-1 focus:ring-yellow-400
-                cursor-pointer
-              "
-            >
-              <option value="">Select your objective</option>
-              <option>Build leadership confidence</option>
-              <option>Gain mental clarity & focus</option>
-              <option>Overcome self-doubt</option>
-              <option>Accelerate professional growth</option>
-            </select>
-            <ChevronDown className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400 pointer-events-none" />
-          </div>
-        </div>
+        
 
         {/* Submit CTA */}
         <button
@@ -165,7 +142,7 @@ const RegistrationForm = () => {
             hover:shadow-[0_18px_42px_rgba(0,0,0,0.45)]
           "
         >
-          Register Now & Get Access →
+          Join The Workshop (Rs.99 Only)
         </button>
       </form>
 

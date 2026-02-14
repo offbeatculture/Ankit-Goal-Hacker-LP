@@ -25,18 +25,18 @@ const steps = [
 
 export const GoalsPulledSection = () => {
   return (
-    <section className="relative py-8 bg-white overflow-hidden">
+    <section className="relative py-6 bg-white overflow-hidden">
       
       {/* Soft Yellow Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-yellow-400/10 blur-[120px] rounded-full" />
       </div>
 
-      <div className="relative container mx-auto px-6 max-w-6xl">
+      <div className="relative container mx-auto px-4 max-w-6xl">
 
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-gray-900 text-3xl md:text-5xl font-heading2 tracking-tight">
+          <h2 className="text-gray-900 text-2xl md:text-5xl font-heading2 tracking-tight">
             What If Your Goals{" "}
             <span className="relative inline-block text-[#facc15]">
               Pulled You
@@ -45,14 +45,14 @@ export const GoalsPulledSection = () => {
             Towards Them?
           </h2>
 
-          <p className="mt-6 mx-auto max-w-3xl text-gray-600 text-base md:text-lg font-body leading-relaxed">
+          <p className="mt-4 mx-auto max-w-3xl text-gray-600 text-sm md:text-lg font-body leading-relaxed">
             Instead of pushing yourself with willpower that runs out by Wednesday,
-            discover the u-part Goal Hacking System that make goal achievements automatic.
+            discover the 4-part Goal Hacking System that makes goal achievement automatic.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {steps.map((s) => (
             <div
               key={s.num}
@@ -61,24 +61,25 @@ export const GoalsPulledSection = () => {
                 rounded-2xl
                 border border-gray-200
                 bg-white
-                p-8
+                p-5 md:p-8
                 transition-all duration-300
                 hover:border-[#facc15]
                 hover:shadow-[0_10px_40px_rgba(250,204,21,0.15)]
-                hover:-translate-y-1
               "
             >
               {/* subtle yellow top line */}
               <div className="absolute top-0 left-0 w-full h-[3px] bg-[#facc15] opacity-0 group-hover:opacity-100 transition duration-300 rounded-t-2xl" />
 
-              {/* Number Badge */}
-              <div className="h-12 w-12 rounded-full bg-[#facc15] text-black flex items-center justify-center font-semibold text-lg">
-                {s.num}
-              </div>
+              {/* Number + Title (Mobile inline, Desktop stacked) */}
+              <div className="flex items-center gap-3 md:block">
+                <div className="h-9 w-9 md:h-12 md:w-12 rounded-full bg-[#facc15] text-black flex items-center justify-center font-semibold text-sm md:text-lg shrink-0">
+                  {s.num}
+                </div>
 
-              <h3 className="mt-6 text-gray-900 font-semibold tracking-wide font-body">
-                {s.title}
-              </h3>
+                <h3 className="text-gray-900 font-semibold tracking-wide font-body md:mt-6">
+                  {s.title}
+                </h3>
+              </div>
 
               <p className="mt-3 text-sm text-gray-600 leading-relaxed font-body">
                 {s.desc}
@@ -88,8 +89,8 @@ export const GoalsPulledSection = () => {
         </div>
 
         {/* Subtle Separator */}
-        <div className="mt-16 flex justify-center">
-          <div className="h-[1px] w-64 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+        <div className="mt-12 flex justify-center">
+          <div className="h-[1px] w-48 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
         </div>
       </div>
     </section>
