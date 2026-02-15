@@ -1,10 +1,39 @@
+import { useEffect, useState } from "react";
 import { Calendar, Clock } from "lucide-react";
 import RegistrationForm from "@/components/fb/RegistrationForm";
 
+const SHEET_CSV =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQUwQ0LMvmivZb-94wBdhRzpM5bAxNxGQaxkVEy8ycGhlrvPLt8SISFyK5pdq2Hg-FfBTHAH5k_yKBO/pub?gid=1912301520&single=true&output=csv";
+
 const HeroSection = () => {
-  // ✅ set your actual date/time here (or pass as props)
-  const workshopDate = "20 Feb 2026";
-  const workshopTime = "7:00 PM IST";
+  const [workshopDate, setWorkshopDate] = useState("Loading...");
+  const [workshopTime, setWorkshopTime] = useState("Loading...");
+
+  useEffect(() => {
+    const fetchDateTime = async () => {
+      try {
+        const res = await fetch(SHEET_CSV, { cache: "no-store" });
+        const csv = await res.text();
+
+        const rows = csv.trim().split(/\r?\n/);
+
+        if (rows.length > 1) {
+          const secondRow = rows[1].split(",");
+
+          const date = secondRow[0]?.replace(/^"(.*)"$/, "$1") || "";
+          const time = secondRow[1]?.replace(/^"(.*)"$/, "$1") || "";
+
+          setWorkshopDate(date || "Date coming soon");
+          setWorkshopTime(time || "Time coming soon");
+        }
+      } catch (err) {
+        setWorkshopDate("Date coming soon");
+        setWorkshopTime("Time coming soon");
+      }
+    };
+
+    fetchDateTime();
+  }, []);
 
   const DateTimeCard = () => (
     <div
@@ -38,7 +67,6 @@ const HeroSection = () => {
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left Content */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-6">
-            {/* Headline */}
             <div className="space-y-3">
               <h1 className="font-heading2 text-5xl font-bold leading-tight text-white md:text-5xl">
                 What If Your Goals
@@ -51,7 +79,6 @@ const HeroSection = () => {
               </p>
             </div>
 
-            {/* CTA */}
             <div className="flex justify-center lg:justify-start w-full">
               <a
                 href="#form"
@@ -62,17 +89,14 @@ const HeroSection = () => {
                   sm:px-7 sm:py-3 sm:text-sm
                   transition-all duration-300
                   hover:bg-yellow-300
-                  focus:outline-none
-                  focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black
                   shadow-[0_0_25px_rgba(250,204,21,0.35)]
-                  hover:shadow-[0_0_35px_rgba(250,204,21,0.45)]
                 "
               >
                 Become A Goal-Hacker
               </a>
             </div>
 
-            {/* ✅ Desktop placement: below CTA */}
+            {/* Desktop placement */}
             <div className="hidden lg:block">
               <DateTimeCard />
             </div>
@@ -80,7 +104,7 @@ const HeroSection = () => {
 
           {/* Right - Form */}
           <div id="form" className="flex flex-col items-center lg:items-end">
-            {/* ✅ Mobile placement: right before the form */}
+            {/* Mobile placement */}
             <div className="w-full flex justify-center lg:hidden mb-4">
               <DateTimeCard />
             </div>
