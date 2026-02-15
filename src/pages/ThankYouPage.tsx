@@ -5,7 +5,7 @@ import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 const WHATSAPP_GROUP_LINK = "https://go.ankitneerav.in/wap-fb"; // 🔁 replace this
 
 const ThankYouPage = () => {
-  const [countdown, setCountdown] = useState(4);
+  const [countdown, setCountdown] = useState(10);
 
   useEffect(() => {
     if (countdown <= 0) {
