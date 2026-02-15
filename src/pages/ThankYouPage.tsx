@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CheckCircle, MessageCircle, Sparkles, Bell } from "lucide-react";
+import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 
 const WHATSAPP_GROUP_LINK = "https://go.ankitneerav.in/wap-fb"; // 🔁 replace this
 
@@ -16,6 +17,7 @@ const ThankYouPage = () => {
     return () => clearTimeout(t);
   }, [countdown]);
 
+  useFacebookPixel();
   return (
     <section className="min-h-screen bg-black flex items-center justify-center px-6 py-16">
       <div className="max-w-2xl w-full text-center">
