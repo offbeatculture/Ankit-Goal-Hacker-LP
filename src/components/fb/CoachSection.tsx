@@ -17,12 +17,12 @@ const CoachSection = () => {
           {/* LEFT CONTENT */}
           <div className="space-y-7">
             {/* Intro line */}
-            <p className="mt-12 text-xs font-semibold uppercase tracking-widest text-white/60">
+            <p className="mt-12 text-xs font-semibold uppercase tracking-widest text-white/60 text-center">
               Meet India’s No.1 Life Coach
             </p>
 
             {/* Big Name */}
-            <h2 className="font-heading2 text-white leading-[0.92]">
+            <h2 className="font-heading2 text-white leading-[0.92] text-center">
               {/* Mobile: single line */}
               <span className="block text-5xl sm:text-6xl md:hidden">
                 Ankit Neerav
@@ -162,9 +162,7 @@ const CoachSection = () => {
                 Become Goal-Hacker <ArrowUpRight className="h-4 w-4" />
               </a>
 
-              <span className="text-sm text-white/60">
-                Join the leadership workshop
-              </span>
+            
             </div>
 
             {/* Awards */}

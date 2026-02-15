@@ -28,7 +28,7 @@ const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="bg-black pt-20 pb-16 md:pt-24 md:pb-24">
+    <section className="bg-black pt-20 pb-40 md:pt-24 md:pb-24">
 
       {/* LINE SEPARATOR */}
       <div className="container mb-12">
@@ -38,7 +38,7 @@ const FAQSection = () => {
       <div className="container max-w-3xl">
 
         {/* Header */}
-        <h2 className="mb-10 font-heading2 text-3xl font-bold text-white md:text-4xl">
+        <h2 className="mb-10 font-heading2 text-3xl font-bold text-white md:text-4xl text-center">
           Frequently Asked Questions
         </h2>
 

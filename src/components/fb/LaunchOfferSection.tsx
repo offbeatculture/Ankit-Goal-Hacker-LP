@@ -54,7 +54,7 @@ const LaunchOfferSection = () => {
     alt="Goal Hacking Workshop Bundle"
     className="
       relative
-      w-full
+      w-[140%]
       max-w-5xl
       h-auto
       object-contain
@@ -66,7 +66,7 @@ const LaunchOfferSection = () => {
 
             {/* Pill */}
             <div className="flex justify-center">
-              <span className="inline-flex items-center rounded-full bg-[#facc15] text-black px-4 py-2 text-xs md:text-sm font-extrabold tracking-wide">
+              <span className="inline-flex items-center rounded-full bg-white text-black px-4 py-2 text-xs md:text-sm font-extrabold tracking-wide">
                 LAUNCH OFFER
               </span>
             </div>

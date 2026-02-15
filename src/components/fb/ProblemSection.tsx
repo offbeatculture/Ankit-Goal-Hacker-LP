@@ -43,7 +43,9 @@ export const ProblemSection = () => {
       </div>
 
       <div className="relative container mx-auto px-6 max-w-6xl">
-
+ <p className="text-white text-2xl md:text-4xl font-heading2 mb-10 text-center">
+           Does This Sound Familiar ? You’re not alone.
+          </p>
         {/* Cards */}
         <div className="grid md:grid-cols-2 gap-6">
           {problems.map((item) => {
