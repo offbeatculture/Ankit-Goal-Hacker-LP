@@ -44,7 +44,7 @@ export const ProblemSection = () => {
 
       <div className="relative container mx-auto px-6 max-w-6xl">
  <p className="text-white text-2xl md:text-4xl font-heading2 mb-10 text-center">
-           Does This Sound Familiar ? You’re not alone.
+           Does This Sound Familiar ?
           </p>
         {/* Cards */}
         <div className="grid md:grid-cols-2 gap-6">
@@ -92,7 +92,7 @@ export const ProblemSection = () => {
                 {/* Closing Emotional Line */}
         <div className="mt-12 text-center">
           <p className="text-white text-2xl md:text-4xl font-heading2">
-            Sound familiar? You’re not alone.
+            You’re not alone.
           </p>
 
           {/* Subtle Grey Shine Separator */}

@@ -18,7 +18,6 @@ const included = [
   { title: "Ritual Recipe for Habit Automation", icon: Repeat },
   { title: "Plan-Action Separation Technique", icon: SplitSquareVertical },
   { title: "Downloadable Goal Hacking Planner (Excel)", icon: Sheet },
-  { title: "Lifetime Access to Workshop Recording", icon: PlayCircle },
 ];
 
 const LaunchOfferSection = () => {
