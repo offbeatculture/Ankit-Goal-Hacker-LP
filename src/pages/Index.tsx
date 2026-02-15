@@ -11,9 +11,13 @@ import { GoalsPulledSection } from "@/components/fb/GoalsPulledSection";
 import { MasterySection } from "@/components/fb/MasterySection";
 import AnnouncementBar from "@/components/fb/AnnouncementBar";
 import LaunchOfferSection from "@/components/fb/LaunchOfferSection";
+import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 
 
 const Index = () => {
+
+    useFacebookPixel();
+    
   return (
     <main className="min-h-screen bg-background">
       <AnnouncementBar/>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CheckCircle, MessageCircle, Sparkles, Bell } from "lucide-react";
 
-const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/C3IZT12mlRE9PP6uWPCamy"; // 🔁 replace this
+const WHATSAPP_GROUP_LINK = "https://go.ankitneerav.in/wap-fb"; // 🔁 replace this
 
 const ThankYouPage = () => {
   const [countdown, setCountdown] = useState(4);
