@@ -88,7 +88,7 @@ export const ProblemSection = () => {
         </div>
 
                 {/* Closing Emotional Line */}
-        <div className="mt-4 text-center">
+        <div className="mt-12 text-center">
           <p className="text-white text-2xl md:text-4xl font-heading2">
             Sound familiar? You’re not alone.
           </p>

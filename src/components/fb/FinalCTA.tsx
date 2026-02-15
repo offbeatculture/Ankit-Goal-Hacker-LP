@@ -27,24 +27,22 @@ const FinalCTA = () => {
               className="
                 relative inline-flex items-center justify-center
                 rounded-full px-10 md:px-12 py-4
-                text-sm md:text-base font-extrabold text-white
+                text-md md:text-base font-extrabold text-black
                 shadow-[0_18px_50px_rgba(168,85,247,0.20)]
                 transition hover:brightness-105
+                bg-[#facc15]
               "
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(168,85,247,1) 0%, rgba(250,204,21,1) 100%)",
-              }}
+             
             >
               Become A Goal-Hacker For Just ₹99 →
               {/* subtle glow ring */}
-              <span
+              {/* <span
                 className="pointer-events-none absolute -inset-[2px] rounded-full opacity-40 blur-[10px]"
                 style={{
                   background:
                     "linear-gradient(90deg, rgba(168,85,247,1) 0%, rgba(250,204,21,1) 100%)",
                 }}
-              />
+              /> */}
             </a>
           </div>
         </div>

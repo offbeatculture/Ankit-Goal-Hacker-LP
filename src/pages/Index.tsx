@@ -10,6 +10,7 @@ import { ProblemSection } from "@/components/fb/ProblemSection";
 import { GoalsPulledSection } from "@/components/fb/GoalsPulledSection";
 import { MasterySection } from "@/components/fb/MasterySection";
 import AnnouncementBar from "@/components/fb/AnnouncementBar";
+import LaunchOfferSection from "@/components/fb/LaunchOfferSection";
 
 
 const Index = () => {
@@ -22,9 +23,11 @@ const Index = () => {
       <GoalsPulledSection/>
       <MasterySection/>
       <CoachSection/>
+      <LaunchOfferSection/>
       <FinalCTA />
       <FAQSection/>
       <StickyCTA/>
+      
     </main>
   );
 };

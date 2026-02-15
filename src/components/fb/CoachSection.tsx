@@ -89,7 +89,7 @@ const CoachSection = () => {
                 <div className="absolute -inset-[1px] rounded-[22px] bg-gradient-to-r from-yellow-400/45 via-orange-400/30 to-pink-500/25 blur-lg" />
                 <div className="relative overflow-hidden rounded-[22px] border border-white/10 bg-[#0b0f17]">
                   <img
-                    src="/Ankit.webp"
+                    src="/Ankit3.webp"
                     alt="Ankit Neerav"
                     className="h-[360px] w-full object-cover"
                     loading="lazy"

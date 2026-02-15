@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import IndexfbNetflix from "./pages/IndexfbNetflix";
 import Register from "./components/fb-netflix/Register";
+import ThankYouPage from "./pages/ThankYouPage";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/fb1" element={<Index />} />
+          <Route path="/ty-fb1" element={<ThankYouPage />} />
           <Route path="/" element={<IndexfbNetflix/>} />
           <Route path="/register" element={<Register/>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
