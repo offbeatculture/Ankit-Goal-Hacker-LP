@@ -8,6 +8,13 @@ import {
 } from "lucide-react";
 
 const masteryItems = [
+
+  {
+    title: "The 3 Laws of Goal Achievement",
+    description:
+      "The secret source to make the good achievement easy , fun & effortless",
+    icon: Brain,
+  },
   {
     title: "The 10-Year Visualization Technique",
     description:
@@ -38,12 +45,7 @@ const masteryItems = [
       "A ready-to-use Excel template to track your goals across 5 life areas with built-in milestone tracking.",
     icon: Sheet,
   },
-  {
-    title: "The 3 Laws of Goal Achievement",
-    description:
-      "The secret source to make the good achievement easy , fun & effortless",
-    icon: Brain,
-  },
+  
 ];
 
 const accents = [

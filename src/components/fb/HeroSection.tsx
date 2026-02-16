@@ -68,13 +68,13 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-6">
             <div className="space-y-3">
-              <h1 className="font-heading2 text-5xl font-bold leading-tight text-white md:text-5xl">
+              <h1 className="font-heading2 text-5xl font-bold leading-tight text-white md:text-8xl">
                 What If Your GOALS
                 <br />
                 <span className="text-gray-400">CHASED YOU..?</span>
               </h1>
 
-              <p className="max-w-lg font-body text-base text-gray-300 md:text-lg font-bold">
+              <p className="max-w-lg font-body text-base text-gray-300 md:text-2xl font-bold">
                 Hack Your Habits. Automate Your Goals.
               </p>
             </div>
