@@ -99,12 +99,46 @@ const CoachSection = () => {
             </div>
 
             {/* Narrative */}
-            <p className="max-w-xl text-base leading-relaxed text-white/70">
-              Over the last decade, Ankit has helped professionals, founders, and
-              high-agency individuals shift from{" "}
-              <span className="text-white font-semibold">potential</span> to{" "}
-              <span className="text-white font-semibold">execution</span>.
-            </p>
+{/* Narrative */}
+<div className="max-w-xl space-y-4 text-base leading-relaxed text-white/70 font-body">
+  <p>
+    <span className="text-xl font-bold text-white">Ankit Neerav</span> is a Life Coach with
+    multiple certifications and thousands of testimonials — with real stories of
+    transformation.
+  </p>
+
+  <p>
+    Over{" "}
+    <span className="font-semibold text-white">1,000,000+ people</span> across{" "}
+    <span className="font-semibold text-white">12+ countries</span> have enrolled in
+    his trainings and courses.
+    <br />
+    He is on a mission to help{" "}
+    <span className="font-semibold text-[#fdc702]">1 Billion people</span> live up to
+    their full potential.
+  </p>
+
+  <p>
+    He is one of the only coaches from India to receive the{" "}
+    <span className="font-semibold text-white">“Impact Awards”</span> from{" "}
+    <span className="font-semibold text-white">Tony Robbins</span> &{" "}
+    <span className="font-semibold text-white">Cloe Madanes</span> (2022).
+    <br />
+    He is also a{" "}
+    <span className="font-semibold text-white">Unicorn Award</span> and{" "}
+    <span className="font-semibold text-white">Unicorn X</span> Award winner — recognized
+    as a high-impact life coach in India.
+  </p>
+
+  <p>
+    This <span className="font-semibold text-white">Goal Hacking Workshop</span> combines
+    years of one-on-one coaching, human psychology, and neuroscience into{" "}
+    <span className="font-semibold text-[#fdc702]">
+      one bulletproof system
+    </span>{" "}
+    you can apply immediately for explosive growth across all areas of life.
+  </p>
+</div>
 
             {/* Work blends */}
             <div className="space-y-3">

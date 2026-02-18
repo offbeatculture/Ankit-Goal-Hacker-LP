@@ -18,6 +18,10 @@ const faqs = [
     q: "How long is the workshop?",
     a: "The core workshop runs approximately 2 hours with hands-on exercises. You'll walk away with a completed goal plan and automated rituals ready to implement immediately.",
   },
+  {
+    q: "Is it Live ?",
+    a: " This Masterclass was originally recorded during a live session and is now available as a limited-time broadcast.- You’ll experience the full energy of the original session — just like those who attended it live.",
+  },
 ];
 
 const FAQSection = () => {
