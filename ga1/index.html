@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Goal Hacker Workshop</title>
+    <meta name="description" content="Goal Hacking Workshop — Automate Your Goals" />
+    <meta name="author" content="Goal Hacker" />
+
+    <meta property="og:title" content="Goal Hacker Workshop" />
+    <meta property="og:description" content="Automate your goals. Install systems. Stop relying on motivation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/goal-hacking.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/goal-hacking.png" />
+
+    <link
+      rel="preload"
+      href="/fonts/GravitasOne-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+
+    <!-- ✅ Google Tag Manager (HEAD) -->
+    <script>
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),
+        dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5WQJR4R5');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- github SPA -->
+    <script>
+      (function () {
+        var l = window.location;
+        if (!l.search) return;
+
+        var params = new URLSearchParams(l.search);
+        var p = params.get("p");
+        if (!p) return;
+
+        var path = decodeURIComponent(p);
+        var h = params.get("h");
+        if (h) params.delete("h");
+
+        params.delete("p");
+
+        var qs = params.toString();
+        var hash = h ? decodeURIComponent(h) : l.hash || "";
+        var newUrl = path + (qs ? "?" + qs : "") + hash;
+
+        window.history.replaceState(null, "", newUrl);
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-B5f45HZi.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CttJDEK8.css">
+  </head>
+
+  <body>
+
+    <!-- ✅ Google Tag Manager (BODY) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5WQJR4R5"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="root"></div>
+  </body>
+</html>
