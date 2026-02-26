@@ -24,7 +24,7 @@ const App = () => (
           <Route path="/ga1" element={<IndexGa/>} />
           <Route path="/ty-fb1" element={<ThankYouPage />}/>
           <Route path="/ty-ga1" element={<ThankYouPageGa />}/>
-          <Route path="/" element={<IndexfbNetflix/>} />
+          <Route path="/" element={<Index/>} />
           <Route path="/register" element={<Register/>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

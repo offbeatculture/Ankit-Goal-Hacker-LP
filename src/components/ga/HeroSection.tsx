@@ -67,17 +67,34 @@ const HeroSection = () => {
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left Content */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-6">
-            <div className="space-y-3">
-              <h1 className="font-heading2 text-5xl font-bold leading-tight text-white md:text-8xl">
-                What If Your GOALS
-                <br />
-                <span className="text-gray-400">CHASED YOU..?</span>
-              </h1>
+            <div className="space-y-2">
+  <h1 className="font-heading2 text-5xl font-bold leading-tight md:text-8xl">
+    <span className="text-gray-400">From Serial Quitter </span>
+    <br />
+    <span className="text-[#facc15]"> → To Goal-Hacking Machine</span>
+  </h1>
 
-              <p className="max-w-lg font-body text-base text-gray-300 md:text-2xl font-bold">
-                Hack Your Habits. Automate Your Goals.
-              </p>
-            </div>
+  <p className="max-w-2xl font-body text-base md:text-2xl text-white font-semibold">
+    Install the 4-step system that makes achieving goals automatic
+  </p>
+
+  {/* Small Benefit Glow Cards */}
+  <div className="mt-10 py-6 flex flex-col items-center gap-2 text-center">
+  
+  {/* Top Line */}
+  <p className="text-sm md:text-base text-white font-bold">
+    Finish What You Start
+    <span className="mx-2 text-gray-500">•</span>
+    Kill Procrastination 
+  </p>
+
+  {/* Bottom Center Line */}
+  <p className="text-sm md:text-base text-white font-bold">
+    Build Unbreakable Momentum
+  </p>
+
+</div>
+</div>
 
             <div className="flex justify-center lg:justify-start w-full">
               <a
