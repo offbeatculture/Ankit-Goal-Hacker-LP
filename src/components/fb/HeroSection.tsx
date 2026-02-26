@@ -69,48 +69,31 @@ const HeroSection = () => {
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-4">
            <div className="space-y-2">
   <h1 className="font-heading2 text-5xl font-bold leading-tight md:text-8xl">
-    <span className="text-gray-400">From Serial Quitter →</span>
+    <span className="text-gray-400">From Serial Quitter </span>
     <br />
-    <span className="text-white">To Goal-Hacking Machine</span>
+    <span className="text-[#facc15]"> → To Goal-Hacking Machine</span>
   </h1>
 
-  <p className="max-w-2xl font-body text-base md:text-2xl text-gray-300 font-semibold">
+  <p className="max-w-2xl font-body text-base md:text-2xl text-white font-semibold">
     Install the 4-step system that makes achieving goals automatic
   </p>
 
   {/* Small Benefit Glow Cards */}
-  <div className="mt-6 flex flex-col items-center gap-4">
+  <div className="mt-10 py-6 flex flex-col items-center gap-2 text-center">
+  
+  {/* Top Line */}
+  <p className="text-sm md:text-base text-white font-bold">
+    Finish What You Start
+    <span className="mx-2 text-gray-500">•</span>
+    Kill Procrastination 
+  </p>
 
-    {/* Top Row */}
-    <div className="grid w-full max-w-xl grid-cols-2 gap-4">
-      
-      <div className="group rounded-lg border border-gray-600 px-4 py-2 text-center text-sm md:text-base text-gray-200 transition duration-300 
-        shadow-[0_0_0px_rgba(255,255,255,0)] 
-        hover:border-white 
-        hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-        Build Unbreakable Momentum
-      </div>
+  {/* Bottom Center Line */}
+  <p className="text-sm md:text-base text-white font-bold">
+    Build Unbreakable Momentum
+  </p>
 
-      <div className="group rounded-lg border border-gray-600 px-4 py-2 text-center  text-sm md:text-base text-gray-200 transition duration-300 
-        shadow-[0_0_0px_rgba(255,255,255,0)] 
-        hover:border-white 
-        hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-        Kill Procrastination
-      </div>
-
-    </div>
-
-    {/* Bottom Center */}
-    <div className="w-full max-w-xs">
-      <div className="group rounded-lg border border-gray-600 px-4 py-2 text-center text-sm md:text-base text-gray-200 transition duration-300 
-        shadow-[0_0_0px_rgba(255,255,255,0)] 
-        hover:border-white 
-        hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-        Finish What You Start
-      </div>
-    </div>
-
-  </div>
+</div>
 </div>
 
             <div className="flex justify-center lg:justify-start w-full">
