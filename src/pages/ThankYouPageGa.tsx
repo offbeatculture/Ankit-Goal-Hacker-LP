@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { CheckCircle, MessageCircle, Sparkles, Bell } from "lucide-react";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 
-const WHATSAPP_GROUP_LINK = "http://connect.ankitneerav.in/wap-fb"; // 🔁 replace this
+const WHATSAPP_GROUP_LINK = "http://connect.ankitneerav.in/wap-ga"; // 🔁 replace this
 
-const ThankYouPage = () => {
+const ThankYouPageGa = () => {
   const [countdown, setCountdown] = useState(10);
 
   useEffect(() => {
@@ -17,7 +17,6 @@ const ThankYouPage = () => {
     return () => clearTimeout(t);
   }, [countdown]);
 
-  useFacebookPixel();
   return (
     <section className="min-h-screen bg-black flex items-center justify-center px-6 py-16">
       <div className="max-w-2xl w-full text-center">
@@ -93,4 +92,4 @@ const ThankYouPage = () => {
   );
 };
 
-export default ThankYouPage;
+export default ThankYouPageGa;

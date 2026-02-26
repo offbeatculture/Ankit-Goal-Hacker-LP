@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Calendar, Clock } from "lucide-react";
-import RegistrationForm from "@/components/fb/RegistrationForm";
+import RegistrationForm from "@/components/ga/RegistrationForm";
 
 const SHEET_CSV =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQUwQ0LMvmivZb-94wBdhRzpM5bAxNxGQaxkVEy8ycGhlrvPLt8SISFyK5pdq2Hg-FfBTHAH5k_yKBO/pub?gid=1912301520&single=true&output=csv";
@@ -63,55 +63,21 @@ const HeroSection = () => {
 
   return (
     <section className="bg-black">
-      <div className="container py-4 md:py-16">
+      <div className="container py-10 md:py-16">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left Content */}
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-4">
-           <div className="space-y-2">
-  <h1 className="font-heading2 text-5xl font-bold leading-tight md:text-8xl">
-    <span className="text-gray-400">From Serial Quitter →</span>
-    <br />
-    <span className="text-white">To Goal-Hacking Machine</span>
-  </h1>
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-6">
+            <div className="space-y-3">
+              <h1 className="font-heading2 text-5xl font-bold leading-tight text-white md:text-8xl">
+                What If Your GOALS
+                <br />
+                <span className="text-gray-400">CHASED YOU..?</span>
+              </h1>
 
-  <p className="max-w-2xl font-body text-base md:text-2xl text-gray-300 font-semibold">
-    Install the 4-step system that makes achieving goals automatic
-  </p>
-
-  {/* Small Benefit Glow Cards */}
-  <div className="mt-6 flex flex-col items-center gap-4">
-
-    {/* Top Row */}
-    <div className="grid w-full max-w-xl grid-cols-2 gap-4">
-      
-      <div className="group rounded-lg border border-gray-600 px-4 py-2 text-center text-sm md:text-base text-gray-200 transition duration-300 
-        shadow-[0_0_0px_rgba(255,255,255,0)] 
-        hover:border-white 
-        hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-        Build Unbreakable Momentum
-      </div>
-
-      <div className="group rounded-lg border border-gray-600 px-4 py-2 text-center  text-sm md:text-base text-gray-200 transition duration-300 
-        shadow-[0_0_0px_rgba(255,255,255,0)] 
-        hover:border-white 
-        hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-        Kill Procrastination
-      </div>
-
-    </div>
-
-    {/* Bottom Center */}
-    <div className="w-full max-w-xs">
-      <div className="group rounded-lg border border-gray-600 px-4 py-2 text-center text-sm md:text-base text-gray-200 transition duration-300 
-        shadow-[0_0_0px_rgba(255,255,255,0)] 
-        hover:border-white 
-        hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-        Finish What You Start
-      </div>
-    </div>
-
-  </div>
-</div>
+              <p className="max-w-lg font-body text-base text-gray-300 md:text-2xl font-bold">
+                Hack Your Habits. Automate Your Goals.
+              </p>
+            </div>
 
             <div className="flex justify-center lg:justify-start w-full">
               <a
