@@ -1,0 +1,263 @@
+import { useEffect, useState } from "react";
+import { User, Mail, Phone, ChevronDown, Briefcase, Timer } from "lucide-react";
+
+const RAZORPAY_PAGE_URL = "https://pages.razorpay.com/pl_SDzdr8SgC3Xl5A/view";
+const WEBHOOK_URL = "https://offbeatn8n.coachswastik.com/webhook/goal-hacking";
+
+const UTM_KEY = "lead_utms_goal_hacking";
+function getUTMs() {
+  const empty = {
+    utm_source: "",
+    utm_campaign: "",
+    utm_medium: "",
+    utm_content: "",
+    fbclid: "",
+  };
+
+  if (typeof window === "undefined") return empty;
+
+  const params = new URLSearchParams(window.location.search);
+  const fromUrl = {
+    utm_source: params.get("utm_source") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_content: params.get("utm_content") || "",
+    fbclid: params.get("fbclid") || "",
+  };
+
+  const saved = localStorage.getItem(UTM_KEY);
+  const hasAny = Object.values(fromUrl).some(Boolean);
+
+  if (!saved && hasAny) {
+    localStorage.setItem(UTM_KEY, JSON.stringify(fromUrl));
+  }
+
+  try {
+    const stored = saved ? JSON.parse(saved) : {};
+    return { ...empty, ...stored, ...fromUrl };
+  } catch {
+    return { ...empty, ...fromUrl };
+  }
+}
+
+function toRazorpayProfession(value: string) {
+  const v = (value || "").trim();
+  if (v === "Business Owner / Entrepreneur") return "Business Owner Entrepreneur";
+  return v;
+}
+
+type Variant = "form1" | "form2";
+
+export default function RegistrationForm({ variant }: { variant: Variant }) {
+  const [timeLeft, setTimeLeft] = useState(5 * 60);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string>("");
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    profession: "",
+  });
+
+  useEffect(() => {
+    getUTMs();
+  }, []);
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+    const interval = setInterval(() => setTimeLeft((prev) => prev - 1), 1000);
+    return () => clearInterval(interval);
+  }, [timeLeft]);
+
+  const minutes = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+  const seconds = String(timeLeft % 60).padStart(2, "0");
+
+  // ✅ EXACT requirement:
+  // form1 users -> add parameter1=form1
+  // form2 users -> add parameter2=form2
+  const abParamKey = variant === "form1" ? "parameter1" : "parameter2";
+  const abParamValue = variant; // "form1" | "form2"
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (submitting) return;
+
+    setError("");
+
+    if (!/^\d{10}$/.test(form.phone)) {
+      setError("Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    if (!form.name || !form.email || !form.profession) {
+      setError("Please fill all fields.");
+      return;
+    }
+
+    setSubmitting(true);
+
+    const professionForPay = toRazorpayProfession(form.profession);
+    const utms = getUTMs();
+
+    // ✅ Include AB param in webhook
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          whatsapp_number: form.phone,
+          profession: form.profession,
+          profession_for_pay: professionForPay,
+          ...utms,
+          page_url: window.location.href,
+          ts: new Date().toISOString(),
+
+          // AB test markers:
+          variant, // always include (simple)
+          [abParamKey]: abParamValue, // parameter1=form1 OR parameter2=form2
+        }),
+        keepalive: true,
+      });
+    } catch {
+      // silent
+    }
+
+    // ✅ Build Razorpay redirect URL
+    const url = new URL(RAZORPAY_PAGE_URL);
+
+    url.searchParams.set("name", form.name);
+    url.searchParams.set("email", form.email);
+    url.searchParams.set("whatsapp_number", form.phone);
+    url.searchParams.set("profession", professionForPay);
+
+    url.searchParams.set("utm_source", utms.utm_source);
+    url.searchParams.set("utm_campaign", utms.utm_campaign);
+    url.searchParams.set("utm_medium", utms.utm_medium);
+    url.searchParams.set("utm_content", utms.utm_content);
+    url.searchParams.set("fbclid", utms.fbclid);
+
+    // ✅ AB param in payment URL
+    url.searchParams.set(abParamKey, abParamValue); // parameter1=form1 OR parameter2=form2
+
+    window.location.href = url.toString();
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="text-center space-y-2">
+        <h3 className="text-xl font-bold text-gray-900">Join The Workshop</h3>
+
+        <div className="inline-flex items-center gap-2 rounded-full bg-yellow-50 px-4 py-1.5 text-sm font-semibold text-yellow-700">
+          <Timer className="h-4 w-4" />
+          Offer expires in
+          <span className="ml-1 font-bold tracking-widest">
+            {minutes} : {seconds}
+          </span>
+        </div>
+
+        <p className="text-sm text-gray-500">Fill in your details to secure your spot</p>
+
+        {/* Optional: tiny debug (remove later) */}
+        <p className="text-[11px] text-gray-400">
+          Variant: <span className="font-semibold">{variant}</span>
+        </p>
+      </div>
+
+      <form onSubmit={onSubmit} className="space-y-3 pt-2">
+        <div>
+          <label className="mb-1 block text-sm font-medium text-gray-700">Full Name</label>
+          <div className="relative">
+            <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+            <input
+              required
+              type="text"
+              placeholder="Enter your name"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              className="w-full rounded-xl border border-gray-300 py-3 pl-10 pr-3 text-sm transition focus:border-yellow-400 focus:outline-none focus:ring-1 focus:ring-yellow-400"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="mb-1 block text-sm font-medium text-gray-700">Email</label>
+          <div className="relative">
+            <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+            <input
+              required
+              type="email"
+              placeholder="Enter your email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="w-full rounded-xl border border-gray-300 py-3 pl-10 pr-3 text-sm transition focus:border-yellow-400 focus:outline-none focus:ring-1 focus:ring-yellow-400"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="mb-1 block text-sm font-medium text-gray-700">Phone Number</label>
+          <div className="relative">
+            <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+            <input
+              required
+              type="tel"
+              inputMode="numeric"
+              placeholder="Enter 10-digit number"
+              value={form.phone}
+              onChange={(e) => {
+                const digits = e.target.value.replace(/\D/g, "").slice(0, 10);
+                setForm({ ...form, phone: digits });
+              }}
+              className="w-full rounded-xl border border-gray-300 py-3 pl-10 pr-3 text-sm transition focus:border-yellow-400 focus:outline-none focus:ring-1 focus:ring-yellow-400"
+            />
+          </div>
+          <p className="mt-1 text-xs text-gray-500">Enter exactly 10 digits (no country code).</p>
+        </div>
+
+        <div>
+          <label className="mb-1 block text-sm font-medium text-gray-700">Profession</label>
+          <div className="relative group">
+            <Briefcase className="absolute left-3 top-3 h-4 w-4 text-gray-400 group-focus-within:text-yellow-500" />
+            <select
+              required
+              value={form.profession}
+              onChange={(e) => setForm({ ...form, profession: e.target.value })}
+              className="w-full appearance-none rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-10 text-sm transition focus:border-yellow-400 focus:outline-none focus:ring-1 focus:ring-yellow-400 cursor-pointer"
+            >
+              <option value="" disabled>
+                Select profession
+              </option>
+              <option>Business Owner / Entrepreneur</option>
+              <option>Working Professional</option>
+              <option>Freelancer</option>
+              <option>Student</option>
+              <option>Other</option>
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400 pointer-events-none" />
+          </div>
+          <p className="mt-1 text-xs text-gray-500">(We’ll pass a Razorpay-safe value for checkout.)</p>
+        </div>
+
+        {error ? (
+          <div className="rounded-xl bg-red-50 border border-red-200 px-4 py-2 text-sm text-red-700">
+            {error}
+          </div>
+        ) : null}
+
+        <button
+          type="submit"
+          disabled={submitting}
+          className="mt-4 w-full rounded-xl bg-black py-4 text-base font-bold text-white transition-all duration-300 hover:bg-gray-900 shadow-[0_14px_32px_rgba(0,0,0,0.35)] hover:shadow-[0_18px_42px_rgba(0,0,0,0.45)] disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {submitting ? "Processing..." : "Join The Workshop (Rs.99 Only)"}
+        </button>
+      </form>
+
+      <p className="pt-2 text-center text-xs text-gray-400">🔒 Your information is safe & never shared</p>
+    </div>
+  );
+}
