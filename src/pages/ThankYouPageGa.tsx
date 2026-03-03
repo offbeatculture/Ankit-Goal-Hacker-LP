@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { CheckCircle, MessageCircle, Sparkles, Bell } from "lucide-react";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 
-const WHATSAPP_GROUP_LINK = "http://connect.ankitneerav.in/wap-ga"; // 🔁 replace this
+const WHATSAPP_GROUP_LINK = "http://connect.ankitneerav.in/ghm-wap-ga"; // 🔁 replace this
 
 const ThankYouPageGa = () => {
   const [countdown, setCountdown] = useState(10);
